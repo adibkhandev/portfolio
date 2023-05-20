@@ -23,6 +23,13 @@
 
 		margin-left: 0.4em;
 		color: #ffeee0;
+		@media (width<510px) {
+			font-size: clamp(4rem,12vw,7rem);
+		}
+		@media (width<385px) {
+	        font-size: clamp(2rem,14vw,5rem);
+	    }
+
 	}
 	.mail-nav-cont{
 		font-size: inherit;
@@ -55,6 +62,9 @@
 				font-family: Archivo;
 				font-weight: 100;
 				font-size: 0.76em;
+				@media (width<370px) {
+					font-size: 0.7em;
+				}
 			}
 		}
 	}

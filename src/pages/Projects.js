@@ -1,4 +1,5 @@
 import React,{useState,useRef,useLayoutEffect,useEffect} from 'react'
+import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
 import weebzone_logo from '../images/weebzone_logo.png'
 import weebzone_categories from '../images/weebzone_categories.jpg'
@@ -66,12 +67,46 @@ console.log(opacity,'opa')
     	
         
     }
-    useEffect(() => {
-    	if(scrollEvent){
-    	window.addEventListener('wheel',marginHandler)
-    	return () => {
+
+    let [scrollStart,setScrollStart] = useState(false)
+    let [previous,setPrevious] = useState(0)
+       console.log(previous,'prevv')
+    let scrollHandler = e => {
+    	console.log(window.scrollY,'Y')
+    	if(window.scrollY>previous){
+    		console.log('great')
+    		if(opacity<1){
+    		 setOpacity(opacity+0.1)
+    	    }
+    		setPrevious(window.scrollY)
+    	}
+    	if(window.scrollY<previous){
+    		console.log('decrement')
+    		if(opacity>0){
+    		 setOpacity(opacity-0.1)
+    		}
+
+    		setPrevious(window.scrollY)
+    	}
+    }
+     useEffect(() => {
+     	if(!isMobile){
+    	 if(scrollEvent ){
+    	 window.addEventListener('wheel',marginHandler)
+    	 return () => {
     		window.removeEventListener('wheel',marginHandler)
-    	};
+    	 };
+     	}
+
+
+    	}
+    	if(isMobile){
+    		if(scrollStart){
+    		 window.addEventListener('scroll',scrollHandler)
+    		  return () =>{
+    			window.removeEventListener('sroll',scrollHandler)
+    		  }
+    		}
 
     	}
     })
@@ -96,7 +131,7 @@ console.log(opacity,'opa')
     	       let entry = entries[0]
     	       console.log(entry)
     	       setImageNav(entry.isIntersecting)
-    	       
+    	       setScrollStart(entry.isIntersecting)
     	 },{threshold:0.0000000000001}
     	) 
     	if(contRef.current){
@@ -109,7 +144,7 @@ console.log(opacity,'opa')
     	};
     },[])
 
-
+console.log(isMobile,'is mobile')
  useEffect(() => {
  	let midObserver = new IntersectionObserver((entries)=>{
           setScrollEvent(entries[0].isIntersecting)
@@ -127,13 +162,37 @@ console.log(opacity,'opa')
       
  	};
  }, [])
+let scroller = (e)=>{
+	console.log(e)
+}
+console.log(margin,'mar')
+let mobileStyles = {
+	flexDirection:"column",
+	justifyContent:"center",
+	position:"absolute",
+	marginTop:"100vh"
+}
+let marginMover = margin + "px"
+let contStyle = () => {
+	if(isMobile){
+         return mobileStyles  
+	}
+	else{
+		if(margin){
+	     return {marginLeft:`${marginMover}`}
+		}
+	}
+}
+
+
 
 	return (
-	   <div  style={{backgroundColor:`rgba(255,244,232,${opacity?opacity:0})`}}  ref={contRef}   className="projects-cont">
+	   <div onScroll={(e)=>scroller(e)}  style={{backgroundColor:`rgba(255,244,232,${opacity?opacity:0})`}}  ref={contRef}   className="projects-cont">
 			<div className="hero-header" >
 			 <h1>My Work</h1>
 			</div>
-	   	    <div style={{marginLeft:` ${margin}px`}} ref={itemContRef} className="items-cont">
+	   	    <div style={contStyle()}
+	   	         ref={itemContRef} className="items-cont">
 				<div  ref={itemsRef} className="items">
 				 {
 				 	projects.map((project_data)=>{
@@ -152,7 +211,8 @@ console.log(opacity,'opa')
 				
 
 				</div>
-	  
+	  {
+	  	
 		<div  className="projects-page">
 	
 
@@ -163,7 +223,7 @@ console.log(opacity,'opa')
 						
 					</div>
 				 
-                 <div ref={midRef} className="mid">
+                 <div style={isMobile?{height:"400vh"}:null} ref={midRef} className="mid">
 				
                    	
                  </div>
@@ -175,6 +235,9 @@ console.log(opacity,'opa')
 				
 			
 		</div>
+
+	  	
+	  }
 
 		 </div>
 	

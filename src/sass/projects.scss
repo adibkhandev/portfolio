@@ -29,6 +29,10 @@
 		.items{
 			display: flex;
 			.item-cont{
+				font-size: clamp(0.8rem,2.2vw,1.1rem);
+				@media (width<590px) {
+					font-size: clamp(0.5rem,2.2vw,0.8rem);
+				}
 				box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 				height: 44em;
 				width: 34em;
@@ -48,18 +52,23 @@
 					align-items: center;
 					margin-bottom: 3em;
 					border-radius:6em;
+					img{
+						width: 100%;
+					}
 				}
 				.button-cont{
 					display: flex;
+					font-size: inherit;
 					button{
+						font-size: inherit;
 						box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
 					    background-color: #fff5eb;
-					    font-size: 1rem;
-					    width: 6.6rem;
-					    height: 2.5rem;
+					    
+					    width: 6.6em;
+					    height: 2.5em;
 					    margin-right: 0.6em;
 					    border-radius: 1000px;
 					    img{

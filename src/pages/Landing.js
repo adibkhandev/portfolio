@@ -61,19 +61,27 @@ const Landing = ({imageNav,setImageNav,contRef}) => {
 	 			A front end developer with designing skills
 	 		</h1>
 	 		<h1 className="details">
-	 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti possimus odio soluta est et amet suscipit impedit, hic earum, officia molestiae omnis quisquam facere provident corporis odit libero inventore vitae.
-	 			Reiciendis, quae laudantium quibusdam tenetur dolor iusto incidunt est quos nesciunt consequuntur. Dolorem amet reiciendis deserunt ipsum incidunt ullam temporibus hic, corrupti officia aliquam. Saepe, sunt expedita fugit qui ab.
+	 			An aspiring react developer with expertise in vanila
+javascript third party libraries, routing and centralised state management tools like Redux and Context
+ Able of reading json data using Fetch and asios
+UI libraries like Material UI Bootstrap and Tailwind
+Preprocessoing tools like SASS and also writing responsive CSS   
+Also a part time designer working with image files in photoshop and illustrations in Adobe Illustrator
+Creating animations integrating latest js css keyframes
+and svgs
 	 		</h1>
 	 	</div>
         </div>
         <div className="side" id="right-text">
 	 	<div className={textRight?"text-cont hidden-right":"text-cont"} id="cont-right" >
 	 		<h1 className="heading">
-	 			A front end developer with designing skills
+	 			Django backend dev and a part time python coder  
 	 		</h1>
 	 		<h1 className="details">
-	 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis odit impedit eius, praesentium architecto, consequatur error quasi nemo maiores reprehenderit optio soluta dolore, quis pariatur. Beatae debitis quaerat, amet nobis.
-	 			Voluptatibus inventore praesentium accusantium, iusto sed quibusdam aut esse, magni, dicta, commodi cupiditate at sapiente quidem doloribus! Qui maxime beatae esse non similique, perspiciatis vel eos incidunt temporibus eligendi laudantium!
+	 			    Profficient django developer who works with REST 
+                    and JSON APIs while maniipulating data from the database with ORM oh and by the way django provides a pre built admin panel for that and bunch of 
+                    user registration and auth models and managers out of the box I can also use dbms like MYSQL POSTGRESQL and MongoDb 
+                    Well i actually started out with Python it's more of a hobby i still do code python throught my way  have worked with wen scrapping tools like selenium and made silly games with PyGame.Long story short i know the datatypes and syntax
 	 		</h1>
 	 	</div>
         </div>	
