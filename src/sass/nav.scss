@@ -1,0 +1,58 @@
+.nav-cont{
+	position: sticky;
+	top: 0;
+	margin-bottom: -10em;
+	width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+    // background-color: black;
+    .logo{
+        
+    	height: 3em ;
+    	width: 6em;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	font-size: clamp(0.8rem,2.4vw,1.5rem);
+    	h1{
+    		font-family: Mialgor;
+    	}
+    }
+    .navigate{
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	font-size:clamp(1rem,1.8vw,1.6rem) ;
+    	width: 11em;
+    	height: 3.6em;
+        @media (width<750px) {
+            font-size:clamp(0.64rem,1.5vw,1.2rem) ;
+        }
+    	h1{
+          
+    		font-family: Emberly-Black;
+    		font-weight: 100;
+            &:hover{
+
+            }
+    	}
+    }
+    .timezone{
+      
+    	height: 3.4em;
+    	font-family: Mialgor;
+    	display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: flex-end;
+    	margin-right: 0.4em;
+        font-size: clamp(0.6rem,1.8vw,1rem);
+    	.time{
+    		font-size: clamp(0.8rem,2.4vw,1.4rem);
+            time{
+                transition: all 1s ease-in;
+            }
+    	}
+    }
+}

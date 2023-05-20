@@ -1,0 +1,82 @@
+.skillset-page-cont{
+	.footer-cont{
+		.curve{
+			background-color: #ffeee0;
+		}
+	}
+}
+.skillset-page{
+	background-color: #ffeee0;
+	position: relative;
+	contain:paint;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	.nav-cont{
+        position: absolute;
+        top: 0;
+		margin-bottom: 0;
+	}
+	.cont{
+		display: flex;
+		@media (width<600px) {
+			flex-direction: column;
+			margin-top: 10vh;
+		}
+	}
+	.image-cont , .text-holder{
+		height: 100vh;
+		width: 50vw;
+		@media (width<600px) {
+         height: 50vh;
+         width: 100vw;
+		}
+	}
+	.text-holder{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: clamp(0.2rem,1.2vw,1.4rem);
+	    @media (width<600px) {
+                    justify-content: flex-start;
+                    align-items: center;
+
+	    }
+
+		.sub-headers{
+			.sub-header{
+			    font-family: Emberly-Thin;
+			    font-size: 1.4em;
+				margin-top: 1em;
+			 @media (width<600px) {
+                   font-size: 3.6em;
+			 }
+			}
+		   .header{
+			font-family: Mialgor;
+            text-align: left;
+			font-size: 3.2em;
+			margin-bottom: 0.3em;
+			 @media (width<600px) {
+               font-size: 5em;
+
+			 }
+		}
+		}
+	}
+	.image-cont{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: clamp(0.2rem,1.6vw,1.4rem);
+		margin-left: 8em;
+		margin-right: 2em;
+		@media (width<600px) {
+          margin: 0;
+		}
+		img{
+			font-size: inherit;
+			height: 16em;
+		}
+	}
+}

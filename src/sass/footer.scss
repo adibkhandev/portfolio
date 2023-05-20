@@ -1,0 +1,61 @@
+.footer-cont{
+    contain:paint;
+	height: 56vw;
+	max-height: 48rem;
+	min-height: 28rem;
+	overflow: hidden;
+	width: 100vw;
+	background-color: #130000;
+	position: relative;
+	font-size: clamp(0.4rem,1.4vw,1.1rem);
+	.curve{
+       position: absolute;
+       background-color: #fff4e8;
+       border-radius: 0px 0px 1000px 1000px ;
+       height: 10vh;
+       width: 100vw;
+       top: 0;
+	}
+	.hero-header{
+		font-family: Mialgor;
+		font-size: clamp(4rem,8em,28rem);
+		margin-top: clamp(13.4rem,1.2em,20rem);
+
+		margin-left: 0.4em;
+		color: #ffeee0;
+	}
+	.mail-nav-cont{
+		font-size: inherit;
+		position: absolute;
+		bottom: 0;
+		width: 100vw;
+		height: 3.4em;
+		overflow: hidden;
+		margin-bottom: 2em;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		.mail{
+			color: white;
+			opacity: 0.7;
+			font-size: 3.8em;
+			font-family: Emberly-Thin;
+			
+			margin-left: 1em;
+		}
+		.nav{
+			font-size: inherit;
+			margin-right: 2em;
+
+			a{ 
+				margin-left:1.2em ;
+				color: white;
+			    opacity: 0.6;
+				font-family: Archivo;
+				font-weight: 100;
+				font-size: 0.76em;
+			}
+		}
+	}
+}

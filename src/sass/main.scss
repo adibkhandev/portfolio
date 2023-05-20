@@ -1,0 +1,34 @@
+@import './about','./skillset','./arsenal','./skills','./landing','./reset','./font','./nav','./keyframes','./projects','./footer';
+@font-face{
+    font-family: Mialgor;
+    src:url(../fonts/Mialgor-Regular.ttf);
+}
+@font-face{
+    font-family: Emberly-Thin;
+    src:url(../fonts/Emberly-Thin.ttf);
+}
+@font-face{
+    font-family: Emberly-Black;
+    src:url(../fonts/Emberly-Black.ttf);
+}
+@font-face{
+	font-family: Rebeqa-Bold;
+	 src:url(../fonts/Rebeqa-Bold.ttf);
+}
+@font-face{
+	font-family: Rebeqa-ExtraBold;
+	 src:url(../fonts/Rebeqa-ExtraBold.ttf);
+}
+@font-face{
+	font-family: Rebeqa-Medium;
+	 src:url(../fonts/Rebeqa-Medium.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;  
+}
+html {
+  scroll-behavior: smooth;
+}
+

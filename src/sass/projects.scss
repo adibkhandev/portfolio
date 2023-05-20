@@ -1,0 +1,106 @@
+.projects-cont{
+	scroll-behavior: smooth;
+	position: relative;
+    background-color: white;
+    
+	.hero-header{
+		font-family: 'Mialgor';
+		color: #130000;
+		width: 100vw;
+		margin-top: 48vh;
+		height: 34vh;
+		position: sticky;
+		top: 25vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size:clamp(4rem,20vw,28rem) ;
+	}
+	.items-cont{
+		position: sticky;
+        z-index: 4;
+		top: 0;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		
+		align-items: center;
+		transition: margin 0.4s ease-out;
+		.items{
+			display: flex;
+			.item-cont{
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+				height: 44em;
+				width: 34em;
+				background-color: #ffeee0;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				border-radius: 8em;
+				.img-cont{
+					height: 30em;
+					width: 26em;
+					overflow: hidden;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-bottom: 3em;
+					border-radius:6em;
+				}
+				.button-cont{
+					display: flex;
+					button{
+						box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+					    background-color: #fff5eb;
+					    font-size: 1rem;
+					    width: 6.6rem;
+					    height: 2.5rem;
+					    margin-right: 0.6em;
+					    border-radius: 1000px;
+					    img{
+					    	font-size: inherit;
+					    	height: 1.2em;
+					    	margin-right: 0.4em;
+					    }
+					    h1{
+					    	font-size: inherit;
+					    	font-family: Archivo ;
+					    	font-weight: 400;
+					    }
+					}
+				}
+			}
+		}
+
+	}
+}
+.projects-page{
+	position: relative;
+
+    .start,.end , .mid{
+    	height: 20vh;
+    	width: 100vw;
+    }
+    .mid{
+    	height:1600vh;
+    }
+    .start{
+    	height: 40vh;
+    }
+    .end{
+
+    	border-radius: 2000px;
+    }
+
+}
+.scroll-inside{
+	
+	overflow: scroll;
+}
+
+

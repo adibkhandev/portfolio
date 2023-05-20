@@ -1,0 +1,96 @@
+
+@keyframes left {
+	from{
+		transform: translateX(0%);
+	}
+	to{
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes right {
+	from{
+		transform: translateX(0%);
+	}
+	to{
+		transform: translateX(100%);
+	}
+}
+.skills-page{
+	contain:paint;
+	background-color: #fff5eb;
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.nav-cont{
+		position: absolute;
+		top: 0;
+	}
+	.runner-cont{
+		margin-top: 5rem;
+		font-size: clamp(6.4rem,12vw,10rem) ;
+		@media (width<550px) {
+			font-size: clamp(4rem,18vw,9rem);
+		}
+	}
+	#runner{
+		display: flex;
+		white-space: nowrap;
+		h1{
+			white-space: nowrap;
+		}
+	}
+	.main{
+		animation: left 80s infinite linear;
+	}
+	.runner-1{
+		font-family: Rebeqa-Medium;
+		font-size: 0.7em;
+		gap:0.6em;
+		line-height: 1.5;
+		background-color: #130000;
+		color: #fff5eb;
+		transform: rotate(1.5deg);
+		margin-bottom: 0.45em;
+		white-space: nowrap;
+		h1{
+		animation: left 60s infinite linear;
+			transform: rotate(1deg);
+		}
+
+	}
+	.runner-2{
+		margin-top: 0.4em;
+		font-family: Rebeqa-Bold;
+		font-size: 1.36em;
+		color: #130000;
+		gap:0.4em;
+		h1{
+        text-shadow: 6px 4px 4px  rgb(19,0,0,40%);
+        animation: right 180s infinite linear;
+		}
+		
+
+	}
+	.runner-3{
+		margin-top: 0.2em;
+		font-family: Rebeqa-ExtraBold;
+		font-size: 0.9em;
+		transform: rotate(-0.8deg);
+		gap:0.6em;
+		white-space: nowrap;
+		h1{
+			animation: right 45s infinite linear;
+		}
+	}
+}
+.skill-page-cont{
+	.footer-cont{
+	.curve{
+   background-color: #fff5eb ;
+   }
+}
+}

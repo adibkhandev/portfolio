@@ -1,0 +1,40 @@
+.about-page-cont{
+	position: relative;
+	contain:paint;
+.nav-cont{
+	top: 0;
+	position: absolute;
+	margin:0;
+
+}
+}
+.about-page{
+    background-color: #fff4e8;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.text-cont{
+
+		line-height: 1;
+		word-spacing: 10px;
+		margin-top: max(10vh,5vw);
+		font-family: Mialgor;
+		max-width:70vw ;
+		font-size: clamp(0.8rem,1.8vw,1.3rem);
+		@media (width<475px) {
+			font-size: clamp(0.6rem,2.2vw,1.1rem);
+		}
+		@media (height<770px) {
+			font-size: clamp(0.6rem,1.8vw,0.9rem);
+		}
+	    .big{
+	    	font-size: 8em;
+	    	line-height: 0.42;
+	    }	
+	    .small{
+	    	font-size: 3em;
+	    }
+	}
+}

@@ -1,0 +1,45 @@
+/*.up{
+	position: absolute;
+	padding-bottom: 5em ;
+	top: -5em;
+	transition: all ease-in 1s;
+}*/
+.below{
+	animation-name: bottom ;
+	animation-duration: 1.3s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+.above{
+	animation-name: above;
+	animation-duration: 1.3s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+@keyframes bottom{
+	0%{
+        bottom: 0;
+
+	}
+	95%{
+         bottom: -90vw;
+
+	}
+	100%{
+		  bottom: -100vw;
+		display: none;
+	}
+}
+@keyframes above{
+	0%{
+		 bottom: -100vw;
+		display: initial;
+       
+
+	}
+
+	100%{
+		  bottom: 0;
+	}
+}
