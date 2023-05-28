@@ -2,6 +2,7 @@ import React,{useState,useRef,useLayoutEffect,useEffect} from 'react'
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
 import weebzone_logo from '../images/weebzone_logo.png'
+import adictionary_logo from '../images/aDictionary.svg'
 import weebzone_categories from '../images/weebzone_categories.jpg'
 import eye from '../images/icons8-eye-100.png'
 import globe from '../images/icons8-globe-96.png'
@@ -17,8 +18,19 @@ const Projects = ({setImageNav,contRef}) => {
                 "image_url":weebzone_logo,
                 "hover_image_url":weebzone_categories
 
+			},
+			{
+                "name":"rhino.io",
+                "live_url":"https://adictionary.vercel.app",
+                "clip_url":"",
+                "repo_url":"",
+                "image_url":adictionary_logo,
+                "hover_image_url":weebzone_categories
+
 			}
      ]  
+
+    
 	let [opacity,setOpacity]=useState(0)
 console.log(opacity,'opa')
 	let itemsRef = useRef(null)
@@ -33,7 +45,7 @@ console.log(opacity,'opa')
     let [scrollEvent,setScrollEvent] = useState(false)
     let marginHandler =e => {
     	console.log(e.deltaY)
-    	let move = e.deltaY/6
+    	let move = e.deltaY/3
     	let opacityAmount = e.deltaY/2000
     	console.log(opacityAmount,'amount')
     	console.log(itemContRef.current.style.marginLeft)
