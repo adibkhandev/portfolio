@@ -12,9 +12,9 @@ const Projects = ({setImageNav,contRef}) => {
 	let projects = [
 			{
                 "name":"rhino.io",
-                "live_url":"adibkhandev/rhinoapp.github.io",
+                "live_url":"https://adibkhandev.github.io/rhinoapp",
                 "clip_url":"",
-                "repo_url":"",
+                "repo_url":"https://github.com/adibkhandev/rhinoapp",
                 "image_url":weebzone_logo,
                 "hover_image_url":weebzone_categories
 
@@ -23,7 +23,7 @@ const Projects = ({setImageNav,contRef}) => {
                 "name":"rhino.io",
                 "live_url":"https://adictionary.vercel.app",
                 "clip_url":"",
-                "repo_url":"",
+                "repo_url":"https://github.com/adibkhandev/adictionary",
                 "image_url":adictionary_logo,
                 "hover_image_url":weebzone_categories
 
@@ -266,14 +266,19 @@ const Item = ({project_data,opacity}) => {
          		<img src={project_data.image_url} alt=""/>
          	</div>
          	<div className="button-cont">
+         	<a target="_blank" href={project_data.live_url? project_data.live_url:''}>
          		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
          			<img src={globe}alt=""/>
          			<h1>Web</h1>
          		</button>
+         	</a>
+         	<a target="_blank" href={project_data.repo_url? project_data.repo_url:''}>
          		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
          			<img src={github} alt=""/>
          			<h1>Github</h1>
          		</button>
+         	</a>
+         		
          		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
          			<img src={eye} alt=""/>
          			<h1>Clips</h1>
