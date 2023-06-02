@@ -32,13 +32,18 @@ const Nav = ({imageNav,contRef}) => {
         <Link to="/skills" >
            <h1>SKILLS</h1>
         </Link>
-           <h1 onClick={scrollHandler}>
+        
+        
+           <h1 className="project-nav" onClick={scrollHandler}>
 
            PROJECTS
            </h1>
-           <Link to="/about">
-            <h1>ABOUT</h1>
-           </Link>
+        	
+        
+           
+        <Link to="/about">
+         <h1>ABOUT</h1>
+        </Link>
            	
 		</div>
 

@@ -17,12 +17,12 @@
 	align-items: center;
 	.text-cont{
 
-		line-height: 1;
+		line-height: 1.15;
 		word-spacing: 10px;
 		margin-top: max(10vh,5vw);
 		font-family: Mialgor;
 		max-width:70vw ;
-		font-size: clamp(0.8rem,1.8vw,1.3rem);
+		font-size: clamp(0.5rem,1.6vw,0.8rem);
 		@media (width<475px) {
 			font-size: clamp(0.6rem,2.2vw,1.1rem);
 		}

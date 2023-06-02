@@ -2,7 +2,26 @@
 	scroll-behavior: smooth;
 	position: relative;
     background-color: white;
-    
+    .anchor{
+    	z-index: 5;
+    	font-size: 1rem;
+    	width: 5em;
+    	height: 5em;
+    	border-radius: 1000px;
+    	// background-color: #ffeedf;
+    	box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    	position: sticky;
+    	top: 2em;
+    	left: 2em;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	margin-bottom: 14em;
+    	margin-top: 28em;
+    	img{
+    		height: 22%;
+    	}
+    }
 	.hero-header{
 		font-family: 'Mialgor';
 		color: #130000;
@@ -104,7 +123,7 @@
     	width: 100vw;
     }
     .mid{
-    	height:1600vh;
+    	height:1200vh;
     }
     .start{
     	height: 20vh;

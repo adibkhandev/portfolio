@@ -7,6 +7,7 @@ import weebzone_categories from '../images/weebzone_categories.jpg'
 import eye from '../images/icons8-eye-100.png'
 import globe from '../images/icons8-globe-96.png'
 import github from '../images/icons8-github-64.png'
+import anchor from '../images/anchor.png'
 
 const Projects = ({setImageNav,contRef}) => {
 	let projects = [
@@ -203,6 +204,18 @@ let contStyle = () => {
 			<div className="hero-header" >
 			 <h1>My Work</h1>
 			</div>
+			<button 
+			 className="anchor"
+             onClick={()=>{
+             	console.log('confirm')
+             	window.scrollTo({
+             		top:0,
+             		behavior:'smooth',
+             	})
+             }}
+			 >
+				<img src={anchor} alt=""/>
+			</button>
 	   	    <div style={contStyle()}
 	   	         ref={itemContRef} className="items-cont">
 				<div  ref={itemsRef} className="items">

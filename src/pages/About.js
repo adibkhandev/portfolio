@@ -9,12 +9,14 @@ const About = () => {
 			    <div className="text-cont">
 				<span className="big">"H</span>
 				<span className="small">
-				    ello there developers and clients
-					I am a computer science enthusist i develop 
-                   modern web applications and also design them 
-                   every now and then.
-                   Turn your design or idea into reality now
-                   and together we shall create value.
+				    ello there developers and clients.
+				    I construct captivating websites
+					with cutting-edge frameworks like React,Sass and Tailwind.
+					 I possess a mastery of python
+					 server-side programming and expertise 
+					 in integrating SQL databases. 
+					 Collaborating together,
+					  we can breathe life into your web project.
 				</span>
 			    </div>
 			    	
