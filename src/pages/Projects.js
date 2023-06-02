@@ -183,7 +183,7 @@ let mobileStyles = {
 	flexDirection:"column",
 	justifyContent:"center",
 	position:"absolute",
-	marginTop:"100vh"
+	marginTop:"300vh"
 }
 let marginMover = margin + "px"
 let contStyle = () => {
