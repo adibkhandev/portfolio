@@ -26,10 +26,11 @@
 		font-family: 'Mialgor';
 		color: #130000;
 		width: 100vw;
-		padding-top: 48vh;
+		padding-top: calc(38rem - 16vw);
+		// padding-top: 48vh;
 		height: 34vh;
 		position: sticky;
-		top: 25vh;
+		top: 0vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
