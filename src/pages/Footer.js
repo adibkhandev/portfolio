@@ -27,13 +27,13 @@ const Footer = () => {
 					<a href="https://www.instagram.com/adibfuckedup.__/?theme=dark">
 						INSTAGRAM
 					</a>
-					<a href="">
+					<a href="https://www.linkedin.com/in/adib-khan-149544279/">
 						LINKEDIN
 					</a>
-					<a href="">
-						BEHANCE
+					<a href="https://dribbble.com/adibkhandev">
+						DRIBBLE
 					</a>
-					<a href="">
+					<a href="https://www.upwork.com/freelancers/~01f488ae53d35766b0">
 						UPWORK
 					</a>
 				</div>
