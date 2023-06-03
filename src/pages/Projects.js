@@ -86,20 +86,23 @@ console.log(opacity,'opa')
        console.log(previous,'prevv')
     let scrollHandler = e => {
     	console.log(window.scrollY,'Y')
-    	if(window.scrollY>previous){
-    		console.log('great')
-    		if(opacity<1){
-    		 setOpacity(opacity+0.1)
-    	    }
-    		setPrevious(window.scrollY)
-    	}
-    	if(window.scrollY<previous){
-    		console.log('decrement')
-    		if(opacity>0){
-    		 setOpacity(opacity-0.1)
-    		}
+    	if(scrollStart){
+	    	if(window.scrollY>previous){
+	    		console.log('great')
+	    		if(opacity<1){
+	    		 setOpacity(opacity+0.1)
+	    	    }
+	    		setPrevious(window.scrollY)
+	    	}
+	    	if(window.scrollY<previous){
+	    		console.log('decrement')
+	    		if(opacity>0){
+	    		 setOpacity(opacity-0.1)
+	    		}
 
-    		setPrevious(window.scrollY)
+	    		setPrevious(window.scrollY)
+	    	}
+    		
     	}
     }
      useEffect(() => {
