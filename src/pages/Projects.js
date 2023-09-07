@@ -2,15 +2,25 @@ import React,{useState,useRef,useLayoutEffect,useEffect} from 'react'
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
 import weebzone_logo from '../images/weebzone_logo.png'
-import adictionary_logo from '../images/aDictionary.svg'
+import adictionary_logo from '../images/adictionary.png'
 import weebzone_categories from '../images/weebzone_categories.jpg'
 import eye from '../images/icons8-eye-100.png'
 import globe from '../images/icons8-globe-96.png'
 import github from '../images/icons8-github-64.png'
 import anchor from '../images/anchor.png'
+import sugary from '../images/sugary.png'
 
 const Projects = ({setImageNav,contRef}) => {
 	let projects = [
+		{
+                "name":"sugary gifts",
+                "live_url":"https://sugary.me/",
+                "clip_url":"",
+                "repo_url":"https://github.com/SugaryLLC/sugary-site-web",
+                "image_url":sugary,
+                "hover_image_url":weebzone_categories
+
+			},
 			{
                 "name":"rhino.io",
                 "live_url":"https://adibkhandev.github.io/rhinoapp",
@@ -28,7 +38,8 @@ const Projects = ({setImageNav,contRef}) => {
                 "image_url":adictionary_logo,
                 "hover_image_url":weebzone_categories
 
-			}
+			},
+
      ]  
 
     
