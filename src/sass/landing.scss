@@ -121,8 +121,15 @@
 		padding-top: 8em;
 		padding-left: 4em;
 		@media (width<620px) {
-           margin-top:  2em !important;		
-        }
+       margin-top:  2em !important;	
+    }
+    @media  (width<470px) {
+	  	line-height: 1.05;
+	  }
+	  @media (height<900px) {
+	  	  margin-top:  -2em !important;	
+	  }
+	 
 	}
 	#cont-right{
 		font-size: clamp(0.8rem,1.2vw,1.4rem);
@@ -131,5 +138,13 @@
 		@media (width<620px) {
            margin-bottom:  -9em !important;		
         }
-	}
+	  @media  (width<470px) {
+	  	 margin-bottom: -19em !important;
+	  	line-height: 1.05;
+	  }
+	  @media (height<600px) {
+	  	  margin-bottom:  -8em !important;	
+	  }
+	 
+	  };
 }

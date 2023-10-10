@@ -61,14 +61,17 @@ const Landing = ({imageNav,setImageNav,contRef}) => {
 	 			A front end developer with designing skills
 	 		</h1>
 	 		<h1 className="details">
-	 			An aspiring react developer with expertise in vanila
-javascript third party libraries, routing and centralised state management tools like Redux and Context
- Able of reading json data using Fetch and asios
-UI libraries like Material UI Bootstrap and Tailwind
-Preprocessoing tools like SASS and also writing responsive CSS   
-Also a part time designer working with image files in photoshop and illustrations in Adobe Illustrator
-Creating animations integrating latest js css keyframes
-and svgs
+	 			With expertise in React and Vue JS along with experience in 
+	 			Next and Nuxt JS 
+	 			I can beathe life into any of your figma deisgns or ideas  
+	 			with any given API endpoint that can respond with JSON
+	 			or i can make the APIs with next or nuxt JS or maybe use any of my backend services
+	 			Have worked on animations with Framer motion for react and VueUse for Vue
+	 			I am a sass fan but i can also make pretty sophisticated animations and responsive UI just using
+	 			raw css then again if i am working on smaller projects I use tailwind or other Pre built UI libraries
+	 			like Material Chakra Prime Vue Bootstrap
+	 			Oh by the way i designed this myself using a startup web app penpot shoutout to them
+	 			But i have also worked in Figma Illustrator Photoshop even if we don't have a degin i can do that for you
 	 		</h1>
 	 	</div>
         </div>
@@ -78,10 +81,11 @@ and svgs
 	 			Django backend dev and a part time python coder  
 	 		</h1>
 	 		<h1 className="details">
-	 			    Profficient django developer who works with REST 
+	 			    Profficient python and Node JS developer who works with REST 
                     and JSON APIs while maniipulating data from the database with ORM oh and by the way django provides a pre built admin panel for that and bunch of 
-                    user registration and auth models and managers out of the box I can also use dbms like MYSQL POSTGRESQL and MongoDb 
-                    Well i actually started out with Python it's more of a hobby i still do code python throught my way  have worked with wen scrapping tools like selenium and made silly games with PyGame.Long story short i know the datatypes and syntax
+                    user registration and auth models and managers out of the box we can do the same things using a Node server  As I can mantain databases like MYSQL POSTGRESQL and MongoDb 
+                    i can wok with any of your required technology  
+                    Well i actually started out with Python then i got into Node but i use the front end solutions more often for time and cost efficience i still love python i have worked with web scrapping tools like selenium and made silly games with PyGame.
 	 		</h1>
 	 	</div>
         </div>	
