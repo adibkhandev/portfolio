@@ -64,15 +64,22 @@ const Landing = ({imageNav,setImageNav,contRef}) => {
 	 			With expertise in React and Vue JS along with experience in 
 	 			Next and Nuxt JS 
 	 			I can beathe life into any of your figma deisgns or ideas  
-	 			with any given API endpoint that can respond with JSON
-	 			or i can make the APIs with next or nuxt JS or maybe use any of my backend services
-	 			Have worked on animations with Framer motion for react and VueUse for Vue
+	 			with any given API endpoint
+				I love working web animation projects
+			
+				
 	 			I am a sass fan but i can also make pretty sophisticated animations and responsive UI just using
 	 			raw css then again if i am working on smaller projects I use tailwind or other Pre built UI libraries
 	 			like Material Chakra Prime Vue Bootstrap
+				 
+				
 	 			Oh by the way i designed this myself using a startup web app penpot shoutout to them
-	 			But i have also worked in Figma Illustrator Photoshop even if we don't have a degin i can do that for you
-	 		</h1>
+	 			But i have also worked in Figma Illustrator Photoshop even if we don't have a design i can do that for you
+	 		    {/* <h1  className='title'>
+					- Designing
+				</h1> */}
+				
+			</h1>
 	 	</div>
         </div>
         <div className="side" id="right-text">
