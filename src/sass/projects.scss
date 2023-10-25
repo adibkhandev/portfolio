@@ -73,7 +73,7 @@
 		width: 100vw;
 		padding-top: calc(38rem - 16vw);
 		// padding-top: 48vh;
-		height: 10vh;
+		// height: 10vh;
 		position: sticky;
 		top: 0;
 		display: flex;
@@ -100,16 +100,18 @@
 	  // scroll-behavior: smooth;
 	  // scroll-snap-type: y mandatory;
 	  position: relative;
+	  
 	  .item-cont{
 		  // scroll-snap-align: start;
 		  width: 100vw;
-		  height: 100vh !important;
+		  height: 180vh !important;
 		  display: flex;
 		  justify-content: center;
 		  
 		  .item{
 			 
-			  height:88vh;
+			//   height:88vh;
+			height: fit-content;
 			  width: 90vw;
 			  max-width: 64em;
 			  position: relative;
@@ -177,7 +179,7 @@
 				  .img-cont{
 					  width:85%;
 					  aspect-ratio: 2/1.8;
-					  margin-top: 10%;
+					  margin-top: min(4rem,7vw);
 					  
 					  overflow: hidden;
 					  position: relative;
@@ -190,7 +192,7 @@
 					 }
 					 @media (width>800px) {
 						aspect-ratio: 2/1;
-						margin-top: 8%;
+						
 					 }
 					 
 					  img{
@@ -212,23 +214,24 @@
 				  }
 				  .header{
 					  text-align: center;
-					  font-family: Rebeqa-ExtraBold;
-					  font-size: 50px;
+					  font-family: Rebeqa;
+					  font-size: 2.6rem;
 					  font-style: normal;
-					  font-weight: 900;
+					  font-weight: 800;
 					  display: flex;
 					  padding-top: 0.6em;
 					  padding-bottom:0.1em;
 					  justify-content: space-between;
 					  align-items: flex-end;
 					  .release{
-						  font-size: 0.5em !important;
+						margin-bottom: 0.4em;
+						  font-size: 0.4em !important;
 					  }
 				  }
 				  .details{
 					  color: #000;
 					  font-family: Emberly-Black;
-					  font-size: 17px;
+					  font-size: 0.8rem;
 					  font-style: normal;
 					  font-weight: 400;
 					  line-height: normal;
@@ -237,29 +240,45 @@
 				  .tools-cont{
 					   width: 85%;
 					   display: flex;
-					   height: 10vh;
+					   height: 3.6em;
+					   font-size: clamp(0.6rem,calc(5rem - 3.4vw),1.2rem);
+					   
+					   margin-bottom: 2.6rem;
 					   .names{
-						color:black;
-						font-family: Rebeqa-Bold;
-						font-size: 1.4rem;
-						font-weight: bolder;
+						font-size: inherit;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-between;
+						h1{
+							line-height: 1.1;
+							color:black;
+							font-family: Rebeqa-ExtraBold;
+							font-size: 0.9em;
+							font-weight: bolder;
+						}
 					   }
 					   .bars{
+						font-size: inherit;
 						width: 100%;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-between;
-						margin-bottom: 0.5rem;
-						margin-left: 2.4em;
-						   .bar{
-							margin-top: 0.3rem;
-							height: 1.2vh;
-							border-radius: 2px;
-							background-color: black;
-						   }
+						// align-items: center;
+						// margin-bottom: 0.5em;
+						margin-left: 1.2rem;
+						.bar-cont{
+							font-size: inherit;
+							height: 1em;
+							display: flex;
+							align-items: center;
+							.bar{
+								font-size: inherit;
+								height: 0.28em;
+								border-radius: 2px;
+								background-color: black;
+							}
+						}
+
 					   }
 				  }
 				  

@@ -22,8 +22,8 @@ const Projects = ({setImageNav,contRef}) => {
                 "repo_url":"https://github.com/SugaryLLC/sugary-site-web",
                 "image_url":sugary,
                 "hover_image_url":weebzone_categories,
-                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
-				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at . Non elementum dolor neque arcu nascetur.',
+				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id  dictum enim aenean blandit sit. Eget nibh  commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
 				"release":'11/07/2022',
 				"tools":[
 					{
@@ -47,7 +47,7 @@ const Projects = ({setImageNav,contRef}) => {
                 "repo_url":"https://github.com/adibkhandev/rhinoapp",
                 "image_url":weebzone_logo,
                 "hover_image_url":weebzone_categories,
-                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet dolor neque arcu nascetur.',
 				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
 				"release":'11/07/2022',
 				"tools":[
@@ -73,7 +73,7 @@ const Projects = ({setImageNav,contRef}) => {
                 "repo_url":"https://github.com/adibkhandev/adictionary",
                 "image_url":adictionary_logo,
                 "hover_image_url":weebzone_categories,
-                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat . Non elementum dolor neque arcu nascetur.',
 				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
 				"release":'11/07/2022',
 				"tools":[
@@ -373,7 +373,12 @@ const Item = ({project_data,opacity}) => {
 						</div>
 						<div className="bars">
 							{project_data.tools.map((tool)=>{
-								return <div style={{width:tool.percent + "%"}} className="bar"></div>
+								return (
+								  <div className="bar-cont">
+									  <div style={{width:tool.percent + "%"}} className="bar"></div>
+								  </div>
+
+								)
 							})}
 						</div>
 					</div>
