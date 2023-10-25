@@ -1,4 +1,6 @@
 import React,{useState,useRef,useLayoutEffect,useEffect} from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
 import weebzone_logo from '../images/weebzone_logo.png'
@@ -9,276 +11,320 @@ import globe from '../images/icons8-globe-96.png'
 import github from '../images/icons8-github-64.png'
 import anchor from '../images/anchor.png'
 import sugary from '../images/sugary.png'
+import texture from '../images/texture.jpg'
 
 const Projects = ({setImageNav,contRef}) => {
 	let projects = [
 		{
-                "name":"sugary gifts",
+                "name":"Sugary",
                 "live_url":"https://sugary.me/",
                 "clip_url":"",
                 "repo_url":"https://github.com/SugaryLLC/sugary-site-web",
                 "image_url":sugary,
-                "hover_image_url":weebzone_categories
-
+                "hover_image_url":weebzone_categories,
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
+				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
+				"release":'11/07/2022',
+				"tools":[
+					{
+						name:'Vue',
+						percent:80,
+					},
+					{
+						name:'Nuxt',
+						percent:70,
+					},
+					{
+						name:'Sass',
+						percent:20,
+					}
+				],
 			},
 			{
-                "name":"rhino.io",
+                "name":"Manga zone",
                 "live_url":"https://adibkhandev.github.io/rhinoapp",
                 "clip_url":"",
                 "repo_url":"https://github.com/adibkhandev/rhinoapp",
                 "image_url":weebzone_logo,
-                "hover_image_url":weebzone_categories
+                "hover_image_url":weebzone_categories,
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
+				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
+				"release":'11/07/2022',
+				"tools":[
+					{
+						name:'Vue',
+						percent:80,
+					},
+					{
+						name:'Nuxt',
+						percent:70,
+					},
+					{
+						name:'Sass',
+						percent:20,
+					}
+				],
 
 			},
 			{
-                "name":"rhino.io",
+                "name":"Adictionary",
                 "live_url":"https://adictionary.vercel.app",
                 "clip_url":"",
                 "repo_url":"https://github.com/adibkhandev/adictionary",
                 "image_url":adictionary_logo,
-                "hover_image_url":weebzone_categories
+                "hover_image_url":weebzone_categories,
+                "intro":'Lorem ipsum dolor sit amet consectetur. Facilisis tortor lectus vel a. Tortor sapien ornare at condimentum est. Feugiat magna dolor aliquet auctor ullamcorper. Non elementum dolor neque arcu nascetur.',
+				"extra":'Lorem ipsum dolor sit amet consectetur. Ut ut sagittis sed amet magna nec id bibendum erat. Suscipit pellentesque dictum enim aenean blandit sit. Eget nibh blandit enim aliquam. Rutrum pellentesque commodo non ac phasellus. Amet sem tellus sem aliquam cursus vel a. Id egestas sed tortor et. Malesuada egestas senectus adipiscing risus elementum sit amet tortor.',
+				"release":'11/07/2022',
+				"tools":[
+					{
+						name:'Vue',
+						percent:80,
+					},
+					{
+						name:'Nuxt',
+						percent:70,
+					},
+					{
+						name:'Sass',
+						percent:20,
+					}
+				],
 
 			},
 
-     ]  
+		]  
+		let itemsRef = useRef(null)
+		let projectRef= useRef(null);
+		let itemContRef = useRef(null);
+		let [margin,setMargin]= useState(0);
+		let [contWidth,setContWidth] = useState(null);
+		let [itemsWidth,setItemsWidth] = useState(null);
+		let [scrollEvent,setScrollEvent] = useState(false)
+		// useEffect(()=>{
+        //      if(itemContRef.current){
+		// 		 console.log('setting number from node -' ,Number(itemContRef.current.style.marginLeft))
+		// 		 setMargin(Number(itemContRef.current.style.marginLeft.replace('%','')))
+		// 		 console.log(itemContRef.current.style.marginLeft,'item node')
+		// 		}
+		// 	},[itemContRef])
+			//pc handler of containers
+let marginHandler = e => {
+	if(scrollEvent){
+		console.log(e.deltaY,'delta')
+		console.log('handling margin')
+		if(e.deltaY>0){
+			console.log('margin increment')
+			setMargin(margin=>{
+				return margin+10
+			})
+			
+		}   
+		if(e.deltaY<0){
+			console.log('margin decrement')
+			setMargin(margin=>{
+				return margin-10
+			})
+		}
 
-    
-	let [opacity,setOpacity]=useState(0)
-console.log(opacity,'opa')
-	let itemsRef = useRef(null)
-    let midRef = useRef(null)
-    let startRef = useRef(null)
-    let itemContRef = useRef(null)
-    let [itemsWidth,setItemsWidth] = useState('0')
-    let [contWidth,setContWidth]= useState('0')
-    let [margin,setMargin]= useState(()=>{
-    	return window.innerWidth+300
-    })
-    let [scrollEvent,setScrollEvent] = useState(false)
-    let marginHandler =e => {
-    	console.log(e.deltaY)
-    	let move = e.deltaY/3
-    	let opacityAmount = e.deltaY/2000
-    	console.log(opacityAmount,'amount')
-    	console.log(itemContRef.current.style.marginLeft)
-    	console.log(margin,'.arg')
-    	console.log(itemsWidth,'itemsWidth')
-    	    if(e.deltaY>0){
-    	    	if(margin>=-itemsWidth-200){
-        		setMargin(margin-move)
+	}
+ }
+	//margin state manager
+	useEffect(()=>{
+		console.log('margin state changed to :' ,margin)
+		if(margin){
+			console.log(margin,'-current margin spot')
+			// if(margin=-100){
+			// 	console.log(margin,'--is the limit')
+			// 	setScrollEvent(false);
+			// }
+			// if(margin=100){
+			// 	setScrollEvent(true);
+			// 	console.log(margin,'--is the limit')
+			// }
+			console.log(-2010<-110,'js logic')
+			if(margin<-110){
+				setScrollEvent(false);
+				console.log(margin,'--is the limit')
+			}
+			if(margin>100){
+				setScrollEvent(false);
+				console.log(margin,'--is the limit')
+			}
+			if(margin<100 && margin>-110){
+				setScrollEvent(true)
+			}
 
-    	    	}
-    	    	if(opacity<1){
-    	    		setOpacity(opacity+opacityAmount)
-    	    	}
+		}
+	},[margin])
+	//pointing at handler functions of mobile and pc
+	 useEffect(() => {
+		console.log('listener placed')
+		console.log('mobile device -' ,isMobile)
+	if(!isMobile){
+		if(scrollEvent ){
+		window.addEventListener('wheel',marginHandler)
+		return () => {
+		window.removeEventListener('wheel',marginHandler)
+		};
+	}
+	else{
+		console.log('event unplugged')
+	}
+}
+	if(isMobile){
+		if(scrollEvent){
+			window.addEventListener('scroll',scrollHandler)
+			return () =>{
+			window.removeEventListener('sroll',scrollHandler)
+			}
+		}
+	
+	}
+	})
+	//
+	//observing functions
+	//=>
+	useEffect(() => {	
+	   console.log('observer initiated')
+	   let landingObserver = new IntersectionObserver ((entries)=>{
+		   let entry = entries[0]
+	//		console.log(entry)
+		   setImageNav(entry.isIntersecting)
+		//    setScrollStart(entry.isIntersecting)
+		  },{threshold:0.0000000000001}
+	   ) 
+	   let projectObserver = new IntersectionObserver((entries)=>{
+		console.log('event activated')   
+		setScrollEvent(entries[0].isIntersecting)
+	//		console.log(entries[0].isIntersecting,'pro ref')
+	   },{threshold:0.8})
+	   if(projectRef.current){
+		
+		   projectObserver.observe(projectRef.current)
+		   }
+	   if(contRef.current){
+		   landingObserver.observe(contRef.current)
+	   }
+	return () => {
+	  if(projectRef.current){
+	   projectObserver.unobserve(projectRef.current)
+	  }
+	  else if(contRef.current){
+	   landingObserver.unobserve(contRef.current)
+	  }
+	}; 
+	},[])
+	useEffect(()=>{
+		console.log(scrollEvent,'changed into')
+        if(scrollEvent){
+			console.log('you can unleash the horizontal scroling')
 
-    	    }
-    	    if(e.deltaY<0){
-             if(margin<=window.innerWidth+300){
+			//stop scrolling here
+			// document.body.style.overflow = "hidden";
+            // document.body.style.userSelect = "none";
+		}
+		else{
+			console.log('horizontal scroling shutdown')
             
-        	 setMargin(margin-move)
-
-             }
-             if(opacity>0){
-             	setOpacity(opacity+opacityAmount)
-             }
-
-
-    	    }
-
-   
-    	
-    	
-        
-    }
-
-    let [scrollStart,setScrollStart] = useState(false)
+			//start again
+			// document.body.style.overflow = "auto";
+            // document.body.style.userSelect = "auto";
+		}
+	},[scrollEvent])
     let [previous,setPrevious] = useState(0)
-       console.log(previous,'prevv')
+//       console.log(previous,'prevv')
+
+	//mobile mover of containers
     let scrollHandler = e => {
-    	console.log(window.scrollY,'Y')
-    	if(scrollStart){
+//    	console.log(window.scrollY,'Y')
+    	if(scrollEvent){
 	    	if(window.scrollY>previous){
-	    		console.log('great')
-	    		if(opacity<1){
-	    		 setOpacity(opacity+0.1)
-	    	    }
+//	    		console.log('great')
+	    		
 	    		setPrevious(window.scrollY)
 	    	}
 	    	if(window.scrollY<previous){
-	    		console.log('decrement')
-	    		if(opacity>0){
-	    		 setOpacity(opacity-0.1)
-	    		}
+//	    		console.log('decrement')
+	    		
 
 	    		setPrevious(window.scrollY)
 	    	}
     		
     	}
     }
-     useEffect(() => {
-     	if(!isMobile){
-    	 if(scrollEvent ){
-    	 window.addEventListener('wheel',marginHandler)
-    	 return () => {
-    		window.removeEventListener('wheel',marginHandler)
-    	 };
-     	}
-
-
-    	}
-    	if(isMobile){
-    		if(scrollStart){
-    		 window.addEventListener('scroll',scrollHandler)
-    		  return () =>{
-    			window.removeEventListener('sroll',scrollHandler)
-    		  }
-    		}
-
-    	}
-    })
-
-
-	useLayoutEffect(() => {
-		setContWidth(contRef.current.offsetWidth)
-		setItemsWidth(itemsRef.current.offsetWidth)
-	},[])
-    
-
-    useEffect(() => {
-      console.log(itemsWidth,'width')	
-    })
-    
-
-
-
-    useEffect(() => {
-    	
-    	let landingObserver = new IntersectionObserver ((entries)=>{
-    	       let entry = entries[0]
-    	       console.log(entry)
-    	       setImageNav(entry.isIntersecting)
-    	       setScrollStart(entry.isIntersecting)
-    	 },{threshold:0.0000000000001}
-    	) 
-    	if(contRef.current){
-    		landingObserver.observe(contRef.current)
-    	}
-    	return () => {
-    		if(contRef.current){
-    		landingObserver.unobserve(contRef.current)
-    	   }
-    	};
-    },[])
-
-console.log(isMobile,'is mobile')
- useEffect(() => {
- 	let midObserver = new IntersectionObserver((entries)=>{
-          setScrollEvent(entries[0].isIntersecting)
- 	})
- 
- 	if(midRef.current){
-
- 	  midObserver.observe(midRef.current)
- 	}
-
- 	return () => {
- 		if(midRef.current){
- 		midObserver.unobserve(midRef.current)
-      }
-      
- 	};
- }, [])
-let scroller = (e)=>{
-	console.log(e)
-}
-console.log(margin,'mar')
-let mobileStyles = {
-	flexDirection:"column",
-	justifyContent:"center",
-	position:"absolute",
-	marginTop:"300vh"
-}
-let marginMover = margin + "px"
-let contStyle = () => {
-	if(isMobile){
-         return mobileStyles  
-	}
-	else{
-		if(margin){
-	     return {marginLeft:`${marginMover}`}
-		}
-	}
-}
-
 
 
 	return (
-	   <div onScroll={(e)=>scroller(e)}  style={{backgroundColor:`rgba(255,244,232,${opacity?opacity:0})`}}  ref={contRef}   className="projects-cont">
-			<div className="hero-header" >
+// 	   <div 
+// 	      ref={contRef}   className="projects-cont">
+// 			<div className="hero-header" >
+// 			 <h1>My Work</h1>
+// 			</div>
+// 			 <button 
+// 			  className="anchor"
+//               onClick={()=>{
+// //             	console.log('confirm')
+//              	window.scrollTo({
+//              		top:0,
+//              		behavior:'smooth',
+//              	})
+//                }}
+// 			  >	
+// 			 <img src={anchor} alt=""/>
+// 			</button>
+            <div className='project-page-frame'>
+				<div className="hero-header" >
 			 <h1>My Work</h1>
 			</div>
-			<button 
-			 className="anchor"
-             onClick={()=>{
-             	console.log('confirm')
+			 <button 
+			  className="anchor"
+              onClick={()=>{
+//             	console.log('confirm')
              	window.scrollTo({
              		top:0,
              		behavior:'smooth',
              	})
-             }}
-			 >
-				<img src={anchor} alt=""/>
+               }}
+			  >	
+			 <img src={anchor} alt=""/>
 			</button>
-	   	    <div style={contStyle()}
-	   	         ref={itemContRef} className="items-cont">
-				<div  ref={itemsRef} className="items">
-				 {
-				 	projects.map((project_data)=>{
+			<Swiper
+				slidesPerView="1"
+				
+				effect="creative"
+				onSwiper={(swiper)=>console.log(swiper,'swipeeerr')}
+				onSlideChange={() => console.log('slide change')}
+				keyboard={{ enabled: true, onlyInViewport: false }}
+				direction="horizontal"
+				height={window.innerHeight}
+				className="projects-page"
+			>
+				
+				{projects.map((project_data)=>{
 				 		return(
-					       <Item opacity={opacity} project_data={project_data}></Item>
+							<SwiperSlide className='items-cont'>
+					           <Item opacity={1} project_data={project_data}></Item>
+						   </SwiperSlide>
 
 				 		)
-				 	})
-				
+				 	})}
+			</Swiper>
 
+			</div>
+		// {/* <div ref={projectRef}  className="projects-page">
+		//     <div
+		// 	ref={itemContRef} className="items-cont">
+		// 		    {projects.map((project_data)=>{
+		// 		 		return(
+		// 			       <Item opacity={1} project_data={project_data}></Item>
 
-				 }
-					
-				</div>
-
-				
-
-				</div>
-	  {
-	  	
-		<div  className="projects-page">
-	
-
-
-
-				
-					<div ref={startRef} className="start">
-						
-					</div>
-				 
-                 <div style={isMobile?{height:"400vh"}:null} ref={midRef} className="mid">
-				
-                   	
-                 </div>
-				 <div  className="end">
-				
-					
-
-				 </div>
-				
-			
-		</div>
-
-	  	
-	  }
-
-		 </div>
+		// 		 		)
+		// 		 	})}
+			 
+        //      </div>
+        // </div> */}
+    // </div>
 	
 		
 	)
@@ -288,30 +334,55 @@ const Item = ({project_data,opacity}) => {
     
     return(
          <>
-         <div style={{backgroundColor:`rgba(255,238,224,${opacity>0.8?opacity:1})`}} className="item-cont">
-         	<div className="img-cont">
-         		<img src={project_data.image_url} alt=""/>
-         	</div>
-         	<div className="button-cont">
-         	<a target="_blank" href={project_data.live_url? project_data.live_url:''}>
-         		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
-         			<img src={globe}alt=""/>
-         			<h1>Web</h1>
-         		</button>
-         	</a>
-         	<a target="_blank" href={project_data.repo_url? project_data.repo_url:''}>
-         		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
-         			<img src={github} alt=""/>
-         			<h1>Github</h1>
-         		</button>
-         	</a>
-         		
-         		<button style={{backgroundColor:`rgba(255,245,235,${opacity>0.6?opacity:1})`}} >
-         			<img src={eye} alt=""/>
-         			<h1>Clips</h1>
-         		</button>
-         	</div>
-         </div>
+		 <div className="item-cont">
+			<div className="item">
+				<div className="border-layer"></div>
+				<div className="blur-layer">
+					<div className="child"></div>
+				</div>
+				<div className="paper-layer">
+					<img src={texture} alt="" />
+				</div>
+
+				<div className="content-layer">
+					<div className="img-cont">
+						<img src={project_data.image_url} alt=""/>
+					</div>
+					<div className="header">
+						<h1>
+						{project_data.name}
+						</h1>
+						<h1 className="release">
+							{project_data.release}
+						</h1>
+					</div>
+					<div className="details">
+						<h1 className="first">
+						   {project_data.intro}
+						</h1>
+						<h1 className="second">
+							{project_data.extra}
+						</h1>
+
+					</div>
+					<div className="tools-cont">
+						<div className="names">
+							{project_data.tools.map((tool)=>{
+								return <h1>{tool.name}</h1>
+							})}
+						</div>
+						<div className="bars">
+							{project_data.tools.map((tool)=>{
+								return <div style={{width:tool.percent + "%"}} className="bar"></div>
+							})}
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+
+		 </div>
          </>
     )
 }
