@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
-import weebzone_logo from '../images/weebzone_logo.png'
-import adictionary_logo from '../images/adictionary.png'
+import weebzone_logo from '../images/manga-archieve-back.jpg'
+import adictionary_logo from '../images/adictionary-2d.png'
 import weebzone_categories from '../images/weebzone_categories.jpg'
 import eye from '../images/icons8-eye-100.png'
 import globe from '../images/icons8-globe-96.png'
