@@ -107,7 +107,7 @@
 		  height: 180vh !important;
 		  display: flex;
 		  justify-content: center;
-		  
+		  overflow: hidden;
 		  .item{
 			 
 			//   height:88vh;
@@ -149,7 +149,7 @@
 				  height: 100%;
 				  display: flex;
 				  align-items: center;
-				  overflow:hidden;
+				 
 				  transition: opacity ease-in-out 0.5s;
 				  .child{
 					  width: 110%;
