@@ -1,6 +1,6 @@
 import React,{useState,useRef,useLayoutEffect,useEffect} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import {Link} from 'react-router-dom'
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
 import weebzone_logo from '../images/manga-archieve-back.jpg'
@@ -335,11 +335,12 @@ const Item = ({project_data,opacity}) => {
     return(
          <>
 		 <div className="item-cont">
-			<div className="item">
+		 <Link to={project_data.live_url}>
+		 <div className="item">
 				<div className="border-layer"></div>
-				<div className="blur-layer">
+				{/* <div className="blur-layer">
 					<div className="child"></div>
-				</div>
+				</div> */}
 				<div className="paper-layer">
 					<img src={texture} alt="" />
 				</div>
@@ -386,6 +387,8 @@ const Item = ({project_data,opacity}) => {
 				</div>
 
 			</div>
+		 </Link>
+			
 
 		 </div>
          </>
