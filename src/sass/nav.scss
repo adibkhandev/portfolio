@@ -29,6 +29,13 @@
         @media (width<750px) {
             font-size:clamp(0.64rem,1.5vw,1.2rem) ;
         }
+		@media (width<380px) {
+			width:10em;
+			height: 11vw;
+			:nth-child(1){
+			   margin-right: 0.08rem;
+			}
+		}
     	h1{
           
     		font-family: Emberly-Black;
@@ -48,9 +55,13 @@
     	align-items: flex-end;
     	margin-right: 0.4em;
         font-size: clamp(0.6rem,1.8vw,1rem);
+		@media (width<380px) {
+			height: 4em;
+			font-size:clamp(0.4rem,2.6vw,0.6rem) ;
+		}
     	.time{
     		font-size: clamp(0.8rem,2.4vw,1.4rem);
-            time{
+			time{
                 transition: all 1s ease-in;
             }
     	}

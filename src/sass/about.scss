@@ -24,10 +24,12 @@
 		max-width:70vw ;
 		font-size: clamp(0.5rem,1.6vw,0.8rem);
 		@media (width<475px) {
-			font-size: clamp(0.6rem,2.2vw,1.1rem);
+			font-size: clamp(0.2rem,1.8vw,0.4rem);
 		}
-		@media (height<770px) {
-			font-size: clamp(0.6rem,1.8vw,0.9rem);
+		@media (width>475px) {
+			@media (height<770px) {
+				font-size: clamp(0.6rem,1.8vw,0.9rem);
+			}
 		}
 	    .big{
 	    	font-size: 8em;
