@@ -1,7 +1,7 @@
 .project-page-frame{
 	scroll-behavior: smooth;
 	position: relative;
-    background: linear-gradient(white 0% 85%, #fff4e8 85% 100%) !important ;
+    background: linear-gradient(white 100%, rgba(255, 243, 219, 1)) !important ;
 	// background: #ffeee0;
 	width: 100vw;
     .anchor{
@@ -30,7 +30,7 @@
 		width: 100vw;
 		padding-top: calc(38rem - 16vw);
 		// padding-top: 48vh;
-		height: 34vh;
+		height: 20vh;
 		position: sticky;
 		top: 0vh;
 		display: flex;
@@ -86,21 +86,27 @@
 .projects-page{
 	  // position: relative;
 	  // width:100%;
-	//   .items-cont{
-	//   position: sticky;
-	//   z-index: 4;
-	//   top: 0;
-	//   display: flex;
-	//   flex-direction: column;
-	//   width: 100%;
-	//   align-items: center;
-	//   transition: margin 0.4s ease-out;
-	  // height: 100vh;
-	  // overflow-y: scroll;
-	  // scroll-behavior: smooth;
-	  // scroll-snap-type: y mandatory;
-	  position: relative;
-	  
+	  //   .items-cont{
+		  //   position: sticky;
+		  //   z-index: 4;
+		  //   top: 0;
+		  //   display: flex;
+		  //   flex-direction: column;
+		  //   width: 100%;
+		  //   align-items: center;
+		  //   transition: margin 0.4s ease-out;
+		  // height: 100vh;
+		  // overflow-y: scroll;
+		  // scroll-behavior: smooth;
+		  // scroll-snap-type: y mandatory;
+		  position: relative;
+		//   :nth-child(1){
+		// 	.item{
+		// 		transform: scale(2.2);
+
+		// 	}
+		//    }
+
 	  .item-cont{
 		  // scroll-snap-align: start;
 		  width: 100vw ;
@@ -118,8 +124,7 @@
 			  max-width: 64em;
 			  position: relative;
 			  font-size: clamp(0.5rem,2.2vw,0.9rem);
-			  transition: box-shadow 0.5s ease-in;
-			 
+			  transition: box-shadow 1s ease-out;
 			//   .border-layer , .paper-layer .blur-layer , .content-layer{
 			// 	padding: 3vw;
 			//   }
@@ -302,7 +307,7 @@
 .swiper-slide-active{
     .item-cont{
 		.item{
-			box-shadow: 1em 1em 3em 10em #fff4e8;
+			box-shadow: 1em 1em 10em 10em rgba(255, 243, 219, 0.76);
 			
 		}
 	}
