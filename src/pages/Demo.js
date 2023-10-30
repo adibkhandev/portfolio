@@ -4,30 +4,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/pagination";
 const Demo=()=> {
-    
+  function circlePath(cx, cy, r){
+    return 'M '+cx+' '+cy+' m -'+r+', 0 a '+r+','+r+' 0 1,1 '+(r*2)+',0 a '+r+','+r+' 0 1,1 -'+(r*2)+',0';
+}
     return (
-        <Swiper
-        slidesPerView="1"
-
-       
-        mousewheel={{  
-          forceToAxis: true,
-         }}
-        keyboard={{ enabled: true, onlyInViewport: false }}
-        direction="vertical"
-        pagination={{ clickable: true }}
-        height={window.innerHeight}
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-      </Swiper>
+        <>
+        <svg className='spinner' viewBox="0 0 1000 1000">
+          <path fill='transparent' id="curve" d={circlePath(100,100,60)} />
+          <text width="500">
+            <textPath alignment-baseline="top" xlinkHref="#curve">
+              Dangerous Curves Ahead Leesgoooooooooyodaksd who
+            </textPath>
+          </text>
+        </svg>
+        </>
     )
 }
 

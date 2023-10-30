@@ -2,6 +2,7 @@ import React,{useState,useRef,useEffect} from 'react'
 import Landing,{Connect} from './Landing'
 import Projects from './Projects'
 import Footer from './Footer'
+import Orbit from './Orbit'
 import AnimatedCursor from "react-animated-cursor"
 
 
@@ -27,12 +28,16 @@ const FirstPage = () => {
                     mixBlendMode:'difference',
                   }}
              />*/}
-		<div className='first-page'>
-			<Landing contRef={contRef} imageNav={imageNav} setImageNav={setImageNav} ></Landing>
-			{/*<Connect setImageNav={setImageNav} ></Connect>*/}
-			<Projects contRef={contRef} setImageNav={setImageNav} ></Projects>
-            <Footer></Footer>
-		</div>
+		<div className="first-page-frame">
+			<Orbit/>
+			<div className='first-page'>
+				<Landing contRef={contRef} imageNav={imageNav} setImageNav={setImageNav} ></Landing>
+				{/*<Connect setImageNav={setImageNav} ></Connect>*/}
+				<Projects contRef={contRef} setImageNav={setImageNav} ></Projects>
+				<Footer></Footer>
+			</div>
+			
+		</div>	
 		</>
 	)
 }

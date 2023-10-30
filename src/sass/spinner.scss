@@ -1,0 +1,42 @@
+.spinner{
+    position: fixed;
+    right: 30px;
+   bottom: 30px;
+    width: 10rem;
+    @media (width<650px) {
+        width: 8rem;
+        @media (height>900px) {
+            bottom: 200px;
+        }
+    }
+    @media (width<490px) {
+        width: 6rem;
+        @media (height>900px) {
+            bottom: 200px ;
+        }
+    }
+    @media (width<420px) {
+        bottom: 100px;
+        @media (height>900px) {
+            bottom: 200px ;
+        }
+    }
+    @media (width<350px) {
+        bottom: 200px;
+        @media (height>900px) {
+            bottom: 250px;
+        }
+
+    }
+    transition: transform 10s linear;
+    animation: infinite spin 10s linear forwards;
+    .font{
+        font-size: 0.06rem;
+    }
+    z-index: 4;
+}
+.first-page-frame{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
