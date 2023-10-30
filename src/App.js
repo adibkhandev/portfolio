@@ -9,11 +9,13 @@ import Demo from './pages/Demo'
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AnimatedCursor from "react-animated-cursor"
+import { isMobile } from 'react-device-detect';
 function App() {
   return (
         <BrowserRouter basename={process.env.PUBLIC_URL} >
            
-          
+          {
+            !isMobile?(
               <AnimatedCursor
            
                  innerSize={18}
@@ -43,6 +45,9 @@ function App() {
                       'button',
                     ]}
               />
+
+            ):''
+          }
             <Routes>
               <Route path="/" element={<FirstPage />} ></Route>
               <Route path="/skills" element={<Skills />} ></Route>
