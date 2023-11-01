@@ -5,12 +5,9 @@ const Orbit=()=> {
     let [manualSpin,setManualSpin]=useState(0)
     console.log(window.pageYOffset,'page Y')
     let manualSpinner = () => {
-        
-        console.log(window.pageYOffset,'page YY')
-        console.log(imageRef.current.style,'reff')
-        // setManualSpin(window.pageYOffset)
-        imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
-        
+        if(imageRef.current){
+            imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
+        }
     }
     useEffect(()=>{
         window.addEventListener('scroll',manualSpinner);
