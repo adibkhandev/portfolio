@@ -29,7 +29,7 @@ const FirstPage = () => {
                   }}
              />*/}
 		<div className="first-page-frame">
-			<Orbit/>
+			<Orbit></Orbit>
 			<div className='first-page'>
 				<Landing contRef={contRef} imageNav={imageNav} setImageNav={setImageNav} ></Landing>
 				{/*<Connect setImageNav={setImageNav} ></Connect>*/}

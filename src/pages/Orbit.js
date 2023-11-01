@@ -1,12 +1,28 @@
-import React from 'react'
+import React,{useEffect,useState,useRef} from 'react'
 import spinner from '../images/spinner.png'
 const Orbit=()=> {
-  function circlePath(cx, cy, r){
-    return 'M '+cx+' '+cy+' m -'+r+', 0 a '+r+','+r+' 0 1,1 '+(r*2)+',0 a '+r+','+r+' 0 1,1 -'+(r*2)+',0';
-}
+    let imageRef = useRef(null)
+    let [manualSpin,setManualSpin]=useState(0)
+    console.log(window.pageYOffset,'page Y')
+    let manualSpinner = () => {
+        
+        console.log(window.pageYOffset,'page YY')
+        console.log(imageRef.current.style,'reff')
+        // setManualSpin(window.pageYOffset)
+        imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
+        
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll',manualSpinner);
+        return () => {
+            window.addEventListener('scroll',manualSpinner);
+        }
+    })
     return (
         <>
-        <img className='spinner' src={spinner} alt="" />
+        <div className="spin-cont">
+          <img ref={imageRef}   className='spinner' src={spinner} alt="" />
+        </div>
         </>
     )
 }

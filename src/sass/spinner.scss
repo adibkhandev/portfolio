@@ -1,4 +1,6 @@
-.spinner{
+.spin-cont{
+    animation: infinite spin 50s linear ;
+    animation-fill-mode: forwards;
     position: fixed;
     right: 30px;
    bottom: 30px;
@@ -28,12 +30,16 @@
         }
 
     }
-    transition: transform 10s linear;
-    animation: infinite spin 10s linear forwards;
+    // animation: infinite spin 50s linear ;
+    // animation-fill-mode: forwards;
     .font{
         font-size: 0.06rem;
     }
     z-index: 4;
+}
+.spinner{
+    width: 100%;
+    transition: transform 0.1s ease-out;
 }
 .first-page-frame{
     width: 100vw;
