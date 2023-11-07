@@ -1,23 +1,25 @@
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/css';
-import "swiper/css/pagination";
+import React,{useRef,useEffect} from 'react'
+import { useScroll,motion, useSpring, useTransform } from 'framer-motion'
 const Demo=()=> {
-  function circlePath(cx, cy, r){
-    return 'M '+cx+' '+cy+' m -'+r+', 0 a '+r+','+r+' 0 1,1 '+(r*2)+',0 a '+r+','+r+' 0 1,1 -'+(r*2)+',0';
-}
+  const targetRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"]
+  })
+  const spring  = useSpring(scrollYProgress)
+  const transform = useTransform(scrollYProgress,[0,1],[0,1080])
     return (
-        <>
-        <svg className='spinner' viewBox="0 0 1000 1000">
-          <path fill='transparent' id="curve" d={circlePath(100,100,60)} />
-          <text width="500">
-            <textPath alignment-baseline="top" xlinkHref="#curve">
-              Dangerous Curves Ahead Leesgoooooooooyodaksd who
-            </textPath>
-          </text>
-        </svg>
-        </>
+      <>
+        <div className="container">
+          <motion.div
+           style={{ rotate: transform  }}
+           ref={targetRef}
+           className="circle"
+           >
+
+          </motion.div>
+        </div>
+      </>
     )
 }
 

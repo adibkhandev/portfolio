@@ -10,3 +10,15 @@
     position: relative;
     top: 0;
 }
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    .circle{
+        margin: 100vh 0;
+        width: 10em;
+        height: 10em;
+        border-radius: 1000px;
+        background-color: grey;
+    }
+}

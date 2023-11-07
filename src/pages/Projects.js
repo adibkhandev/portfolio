@@ -12,7 +12,7 @@ import github from '../images/icons8-github-64.png'
 import anchor from '../images/anchor.png'
 import sugary from '../images/sugary.png'
 import texture from '../images/texture.jpg'
-
+import { useScroll,motion, useSpring, useTransform, transform } from 'framer-motion'
 const Projects = ({setImageNav,contRef}) => {
 	let projects = [
 		{
@@ -94,193 +94,22 @@ const Projects = ({setImageNav,contRef}) => {
 			},
 
 		]  
-		let itemsRef = useRef(null)
-		let projectRef= useRef(null);
-		let itemContRef = useRef(null);
-		let [margin,setMargin]= useState(0);
-		let [contWidth,setContWidth] = useState(null);
-		let [itemsWidth,setItemsWidth] = useState(null);
-		let [scrollEvent,setScrollEvent] = useState(false)
-		// useEffect(()=>{
-        //      if(itemContRef.current){
-		// 		 console.log('setting number from node -' ,Number(itemContRef.current.style.marginLeft))
-		// 		 setMargin(Number(itemContRef.current.style.marginLeft.replace('%','')))
-		// 		 console.log(itemContRef.current.style.marginLeft,'item node')
-		// 		}
-		// 	},[itemContRef])
-			//pc handler of containers
-let marginHandler = e => {
-	if(scrollEvent){
-		console.log(e.deltaY,'delta')
-		console.log('handling margin')
-		if(e.deltaY>0){
-			console.log('margin increment')
-			setMargin(margin=>{
-				return margin+10
-			})
-			
-		}   
-		if(e.deltaY<0){
-			console.log('margin decrement')
-			setMargin(margin=>{
-				return margin-10
-			})
-		}
-
-	}
- }
-	//margin state manager
-	useEffect(()=>{
-		console.log('margin state changed to :' ,margin)
-		if(margin){
-			console.log(margin,'-current margin spot')
-			// if(margin=-100){
-			// 	console.log(margin,'--is the limit')
-			// 	setScrollEvent(false);
-			// }
-			// if(margin=100){
-			// 	setScrollEvent(true);
-			// 	console.log(margin,'--is the limit')
-			// }
-			console.log(-2010<-110,'js logic')
-			if(margin<-110){
-				setScrollEvent(false);
-				console.log(margin,'--is the limit')
-			}
-			if(margin>100){
-				setScrollEvent(false);
-				console.log(margin,'--is the limit')
-			}
-			if(margin<100 && margin>-110){
-				setScrollEvent(true)
-			}
-
-		}
-	},[margin])
-	//pointing at handler functions of mobile and pc
-	 useEffect(() => {
-		console.log('listener placed')
-		console.log('mobile device -' ,isMobile)
-	if(!isMobile){
-		if(scrollEvent ){
-		window.addEventListener('wheel',marginHandler)
-		return () => {
-		window.removeEventListener('wheel',marginHandler)
-		};
-	}
-	else{
-		console.log('event unplugged')
-	}
-}
-	if(isMobile){
-		if(scrollEvent){
-			window.addEventListener('scroll',scrollHandler)
-			return () =>{
-			window.removeEventListener('sroll',scrollHandler)
-			}
-		}
-	
-	}
-	})
-	//
-	//observing functions
-	//=>
-	useEffect(() => {	
-	   console.log('observer initiated')
-	   let landingObserver = new IntersectionObserver ((entries)=>{
-		   let entry = entries[0]
-	//		console.log(entry)
-		   setImageNav(entry.isIntersecting)
-		//    setScrollStart(entry.isIntersecting)
-		  },{threshold:0.0000000000001}
-	   ) 
-	   let projectObserver = new IntersectionObserver((entries)=>{
-		console.log('event activated')   
-		setScrollEvent(entries[0].isIntersecting)
-	//		console.log(entries[0].isIntersecting,'pro ref')
-	   },{threshold:0.8})
-	   if(projectRef.current){
-		
-		   projectObserver.observe(projectRef.current)
-		   }
-	   if(contRef.current){
-		   landingObserver.observe(contRef.current)
-	   }
-	return () => {
-	  if(projectRef.current){
-	   projectObserver.unobserve(projectRef.current)
-	  }
-	  else if(contRef.current){
-	   landingObserver.unobserve(contRef.current)
-	  }
-	}; 
-	},[])
-	useEffect(()=>{
-		console.log(scrollEvent,'changed into')
-        if(scrollEvent){
-			console.log('you can unleash the horizontal scroling')
-
-			//stop scrolling here
-			// document.body.style.overflow = "hidden";
-            // document.body.style.userSelect = "none";
-		}
-		else{
-			console.log('horizontal scroling shutdown')
-            
-			//start again
-			// document.body.style.overflow = "auto";
-            // document.body.style.userSelect = "auto";
-		}
-	},[scrollEvent])
-    let [previous,setPrevious] = useState(0)
-//       console.log(previous,'prevv')
-
-	//mobile mover of containers
-    let scrollHandler = e => {
-//    	console.log(window.scrollY,'Y')
-    	if(scrollEvent){
-	    	if(window.scrollY>previous){
-//	    		console.log('great')
-	    		
-	    		setPrevious(window.scrollY)
-	    	}
-	    	if(window.scrollY<previous){
-//	    		console.log('decrement')
-	    		
-
-	    		setPrevious(window.scrollY)
-	    	}
-    		
-    	}
-    }
-
-
+		const targetRef = useRef(null)
+		const { scrollYProgress } = useScroll({
+			target: targetRef,
+			offset: ["start end", "end start"]
+		})
+		const transform = useTransform(scrollYProgress,[0,1],[5000,-5000])
 	return (
-// 	   <div 
-// 	      ref={contRef}   className="projects-cont">
-// 			<div className="hero-header" >
-// 			 <h1>My Work</h1>
-// 			</div>
-// 			 <button 
-// 			  className="anchor"
-//               onClick={()=>{
-// //             	console.log('confirm')
-//              	window.scrollTo({
-//              		top:0,
-//              		behavior:'smooth',
-//              	})
-//                }}
-// 			  >	
-// 			 <img src={anchor} alt=""/>
-// 			</button>
-            <div className='project-page-frame'>
+            <div 
+			 ref={targetRef} 
+			 className={'project-page-frame'+ " " + (isMobile?'mobile-frame':'')}>
 				<div className="hero-header" >
 			 <h1>My Work</h1>
 			</div>
 			 <button 
 			  className="anchor"
               onClick={()=>{
-//             	console.log('confirm')
              	window.scrollTo({
              		top:0,
              		behavior:'smooth',
@@ -289,42 +118,24 @@ let marginHandler = e => {
 			  >	
 			 <img src={anchor} alt=""/>
 			</button>
-			<Swiper
-				slidesPerView="1"
-				
-				effect="creative"
-				onSwiper={(swiper)=>console.log(swiper,'swipeeerr')}
-				onSlideChange={() => console.log('slide change')}
-				keyboard={{ enabled: true, onlyInViewport: false }}
-				direction="horizontal"
-				height={window.innerHeight}
-				className="projects-page"
-			>
-				
+			<motion.div 
+			 style={{x:!isMobile?transform:''}}
+			 
+			 className={ "projects-page" +" "+ (isMobile?'mobile-projects':'')}
+			 >
 				{projects.map((project_data)=>{
 				 		return(
-							<SwiperSlide className='items-cont'>
+							<div className='items-cont'>
 					           <Item opacity={1} project_data={project_data}></Item>
-						   </SwiperSlide>
+						   </div>
 
 				 		)
 				 	})}
-			</Swiper>
+
+			</motion.div>
+				
 
 			</div>
-		// {/* <div ref={projectRef}  className="projects-page">
-		//     <div
-		// 	ref={itemContRef} className="items-cont">
-		// 		    {projects.map((project_data)=>{
-		// 		 		return(
-		// 			       <Item opacity={1} project_data={project_data}></Item>
-
-		// 		 		)
-		// 		 	})}
-			 
-        //      </div>
-        // </div> */}
-    // </div>
 	
 		
 	)
@@ -336,11 +147,9 @@ const Item = ({project_data,opacity}) => {
          <>
 		 <div className="item-cont">
 		 <Link to={project_data.live_url}>
-		 <div className="item">
+		 <motion.div  whileTap={{ scale: 0.9 }} className="item">
 				<div className="border-layer"></div>
-				{/* <div className="blur-layer">
-					<div className="child"></div>
-				</div> */}
+				
 				<div className="paper-layer">
 					<img src={texture} alt="" />
 				</div>
@@ -386,7 +195,7 @@ const Item = ({project_data,opacity}) => {
 					
 				</div>
 
-			</div>
+			</motion.div>
 		 </Link>
 			
 
