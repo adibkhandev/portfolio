@@ -1,25 +1,32 @@
 .about-page-cont{
 	position: relative;
 	contain:paint;
+	background-color: #fff4e8;
+	.footer-cont{
+		.curve{
+			background-color: #fff4e8;
+		}
+	}
 .nav-cont{
 	top: 0;
-	position: absolute;
+	position: sticky;
 	margin:0;
 
 }
 }
 .about-page{
-    background-color: #fff4e8;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	.text-cont{
+	position:relative;
 
+	.text-cont{
+      
 		line-height: 1.15;
 		word-spacing: 10px;
-		margin-top: max(10vh,5vw);
+		// margin-top: max(10vh,5vw);
 		font-family: Mialgor;
 		max-width:70vw ;
 		font-size: clamp(0.5rem,1.6vw,0.8rem);

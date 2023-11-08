@@ -34,8 +34,8 @@ const FirstPage = () => {
 				<Landing contRef={contRef} imageNav={imageNav} setImageNav={setImageNav} ></Landing>
 				{/*<Connect setImageNav={setImageNav} ></Connect>*/}
 				<Projects contRef={contRef} setImageNav={setImageNav} ></Projects>
-				<Footer></Footer>
 			</div>
+				<Footer></Footer>
 			
 		</div>	
 		</>

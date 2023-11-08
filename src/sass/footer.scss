@@ -8,6 +8,7 @@
 	background-color: #130000;
 	position: relative;
 	font-size: clamp(0.4rem,1.4vw,1.1rem);
+	z-index: 3;
 	.curve{
        position: absolute;
        background-color: #fff4e8;

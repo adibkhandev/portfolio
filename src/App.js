@@ -6,6 +6,7 @@ import Skillset from './pages/Skillset'
 import About from './pages/About'
 import Work from './pages/Work'
 import Demo from './pages/Demo'
+import Projects from './pages/Projects'
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AnimatedCursor from "react-animated-cursor"
@@ -56,6 +57,7 @@ function App() {
                <Route path="/about" element={<About />}> </Route>
                <Route path="/projects" element={<Work />}> </Route>
                <Route path="/demo" element={<Demo/>}></Route>
+               <Route path="/projects" element={<Projects/>}></Route>
              
             </Routes>
              

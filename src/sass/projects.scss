@@ -44,7 +44,7 @@
 		top: 0;
 		.item-cont{
 			margin: 0 !important;
-			height: 80vh !important;
+			height: 100vh !important;
 		}
 	}
 	.mobile-frame{
@@ -55,8 +55,8 @@
 		top: 0;
 		display:flex;
 	.item-cont{
-		height: 100vh ;
 		display: flex;
+		height: 100vh;
 		justify-content: center;
 		align-items: center;
 		margin-right:8em ;
