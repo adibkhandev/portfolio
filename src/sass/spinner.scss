@@ -1,9 +1,12 @@
-.spin-cont{
+.sub-cont{
     animation: infinite spin 50s linear ;
     animation-fill-mode: forwards;
+
+}
+.spin-cont{
     position: fixed;
-    right: 30px;
-   bottom: 30px;
+    bottom: 30px;
+    left: 30px;
     width: 10rem;
     @media (width<650px) {
         width: 8rem;

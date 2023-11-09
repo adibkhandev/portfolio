@@ -98,17 +98,10 @@ const Landing = ({imageNav,setImageNav,contRef}) => {
 				</h1>
 			</div>
 			</div>	
-				<div 
-				onClick={()=>{
-					setTextRight(true)
-					console.log('clicks',imageNav)
-				}}
-				// onAnimationEnd={()=>{
-				// 	setImageNav(false)
-				// }} 
+			<div 
 				className={!imageNav?"hero-image above":"hero-image below"}>
 				<img src={model} alt=""/>
-				</div>   	
+			</div>   
 		</div>
 			<div ref={page_ref} className="content">
 				
