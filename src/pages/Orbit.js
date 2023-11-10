@@ -10,9 +10,13 @@ const Orbit=({shrinkTime})=> {
         let number = 8000
         if(contRef.current && imageRef.current){
             imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
-            if(window.pageYOffset>number){
+            if(window.pageYOffset>=number){
                 imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
-                contRef.current.style.transform = `translateX(${-(number/2)+(window.pageYOffset/2)}px)`
+                contRef.current.style.transform = `translateX(${((window.pageYOffset-number)/2)}px)`
+            }
+            else{
+                imageRef.current.style.transform = `rotate(${window.pageYOffset/5}deg)`
+                contRef.current.style.transform = `translateX(${0}px)`  
             }
            
         }
