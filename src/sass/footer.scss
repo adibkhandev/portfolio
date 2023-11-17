@@ -50,10 +50,13 @@
 		.mail{
 			color: white;
 			opacity: 0.7;
-			font-size: 3.8em;
+			font-size: 4em;
 			font-family: Emberly-Thin;
-			
-			margin-left: 1em;
+			margin-left: 0.6em;
+			height: 1em;
+			.mail-link{
+				font-size: 0.8em;
+			}
 		}
 		.nav{
 			font-size: inherit;

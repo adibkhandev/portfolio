@@ -18,8 +18,10 @@ const Footer = () => {
 			</div>
 			<div className="mail-nav-cont">
 				<div className="mail">
-				<a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXDzhqcXBHMkLWZmfDgKcgfBwkqDkHQkvSZqDLZkmKRDTVBJWntlbPmJvBgXsHGpjxNq">
+				<a className='mail-link' href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTMXDzhqcXBHMkLWZmfDgKcgfBwkqDkHQkvSZqDLZkmKRDTVBJWntlbPmJvBgXsHGpjxNq">
+					
 					adibkhaan001@gmail.com
+					
 				</a>
 					
 				</div>

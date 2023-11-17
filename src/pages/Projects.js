@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {Link} from 'react-router-dom'
 import {isMobile} from 'react-device-detect'
 import Footer from './Footer'
-
 import anchor from '../images/anchor.png'
 import texture from '../images/texture.jpg'
 import data from './Data'
@@ -104,7 +103,11 @@ const Item = ({project_data,opacity}) => {
 					<div className="tools-cont">
 						<div className="names">
 							{project_data.tools.map((tool)=>{
-								return <h1>{tool.name}</h1>
+								return(
+									<div className="name">
+                                      <h1>{tool.name}</h1>
+									</div>
+								)	
 							})}
 						</div>
 						<div className="bars">
