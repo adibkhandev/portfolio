@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.08702da4.css",
-    "main.js": "/portfolio/static/js/main.44bf9105.js",
+    "main.css": "/portfolio/static/css/main.9133e4f3.css",
+    "main.js": "/portfolio/static/js/main.26a75291.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/sugary.png": "/portfolio/static/media/sugary.989407975671ef5b403e.png",
     "static/media/model.png": "/portfolio/static/media/model.0f9db1d9c0fe4a41f299.png",
@@ -18,6 +18,7 @@
     "static/media/Rebeqa-Bold.ttf": "/portfolio/static/media/Rebeqa-Bold.9925530eaf44f8f8b4c1.ttf",
     "static/media/rest.png": "/portfolio/static/media/rest.7051f45ad1971a144727.png",
     "static/media/Rebeqa-Medium.ttf": "/portfolio/static/media/Rebeqa-Medium.b68bb5a4d71bbce66b33.ttf",
+    "static/media/Rebeqa-Black.ttf": "/portfolio/static/media/Rebeqa-Black.4f29544d39b64d79e0e7.ttf",
     "static/media/Emberly-Black.ttf": "/portfolio/static/media/Emberly-Black.1e3b0e40904335a59397.ttf",
     "static/media/Emberly-Thin.ttf": "/portfolio/static/media/Emberly-Thin.3d8e4f45f81d14118340.ttf",
     "static/media/python.png": "/portfolio/static/media/python.12cb78c7faa34811d9e5.png",
@@ -29,12 +30,12 @@
     "static/media/django.svg": "/portfolio/static/media/django.6ec3b93c5feec5a762797ac924844741.svg",
     "static/media/db.svg": "/portfolio/static/media/db.e24401d3fd5e1e28d6c1ccf97f7f433b.svg",
     "index.html": "/portfolio/index.html",
-    "main.08702da4.css.map": "/portfolio/static/css/main.08702da4.css.map",
-    "main.44bf9105.js.map": "/portfolio/static/js/main.44bf9105.js.map",
+    "main.9133e4f3.css.map": "/portfolio/static/css/main.9133e4f3.css.map",
+    "main.26a75291.js.map": "/portfolio/static/js/main.26a75291.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08702da4.css",
-    "static/js/main.44bf9105.js"
+    "static/css/main.9133e4f3.css",
+    "static/js/main.26a75291.js"
   ]
 }
